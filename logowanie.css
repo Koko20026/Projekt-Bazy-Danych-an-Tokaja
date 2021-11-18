@@ -1,0 +1,13 @@
+div {
+    width: 400px ;
+    height: 300px;
+    border-style: solid;
+    margin: auto;
+    text-align: center;
+};
+form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
