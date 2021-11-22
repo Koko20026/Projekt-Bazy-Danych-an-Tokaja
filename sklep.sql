@@ -1,32 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.0.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Czas generowania: 18 Lis 2021, 17:34
--- Wersja serwera: 10.4.17-MariaDB
--- Wersja PHP: 8.0.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Baza danych: `sklep`
---
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `Dane_Logowania`
---
-
+DROP TABLE IF EXISTS `dane_logowania`;
 CREATE TABLE `Dane_Logowania` (
   `id_konta` int(11) NOT NULL,
   `haslo` varchar(32) NOT NULL,
@@ -36,12 +8,7 @@ CREATE TABLE `Dane_Logowania` (
   `login` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `Pracownicy`
---
-
+DROP TABLE IF EXISTS `pracownicy`;
 CREATE TABLE `Pracownicy` (
   `id_pracownik` int(11) NOT NULL,
   `imie` varchar(45) NOT NULL,
@@ -50,12 +17,7 @@ CREATE TABLE `Pracownicy` (
   `Adres` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `galeria_zdjec`
---
-
+DROP TABLE IF EXISTS `galeria_zdjec`;
 CREATE TABLE `galeria_zdjec` (
   `id_zdjecia` int(11) NOT NULL,
   `nazwa_jpg` varchar(45) NOT NULL,
@@ -63,35 +25,21 @@ CREATE TABLE `galeria_zdjec` (
   `fotografia` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Struktura tabeli dla tabeli `kategorie`
---
-
+DROP TABLE IF EXISTS `kategorie`;
 CREATE TABLE `kategorie` (
   `id_kategoria` int(11) NOT NULL,
   `kategoria` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `producenci`
---
-
+DROP TABLE IF EXISTS `producenci`;
 CREATE TABLE `producenci` (
   `id_producenci` int(11) NOT NULL,
   `nazwa` varchar(45) NOT NULL,
   `adres` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `produkty`
---
-
+DROP TABLE IF EXISTS `produkty`;
 CREATE TABLE `produkty` (
   `id_producenci` int(11) NOT NULL,
   `nazwa_produktu` varchar(45) NOT NULL,
@@ -104,24 +52,14 @@ CREATE TABLE `produkty` (
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `zamowienie_produkty`
---
-
+DROP TABLE IF EXISTS `zamowienie_produkty`;
 CREATE TABLE `zamowienie_produkty` (
   `id_produktu` int(11) NOT NULL,
   `id_sprzedazy` int(11) NOT NULL
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `zamowienie`
---
-
+DROP TABLE IF EXISTS `zamowienie`;
 CREATE TABLE `zamowienie` (
   `id_sprzedazy` int(11) NOT NULL,
   `id_produktu` int(11) NOT NULL,
@@ -130,12 +68,7 @@ CREATE TABLE `zamowienie` (
   `ilosc` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `klienci`
---
-
+DROP TABLE IF EXISTS `klienci`;
 CREATE TABLE `klienci` (
   `Imie` varchar(45) NOT NULL,
   `id_klienta` int(11) NOT NULL,
@@ -146,125 +79,56 @@ CREATE TABLE `klienci` (
   `login` varchar(45)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Struktura tabeli dla tabeli `zamowione_produkty`
---
-
-CREATE TABLE `zamowione_produkty` (
-  `id_zamowione_produkty` int(11) NOT NULL,
-  `id_zamowienia` int(11) NOT NULL,
-  `id_produktu` int(11) NOT NULL,
-  `ilosc` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Indeksy dla zrzutów tabel
---
-
---
--- Indeksy dla tabeli `Produkty`
---
 ALTER TABLE `Produkty`
   ADD PRIMARY KEY (`id_produktu`);
 
---
--- Indeksy dla tabeli `dane_logowania`
---
+
 ALTER TABLE `dane_logowania`
   ADD PRIMARY KEY (`id_konta`);
 
---
--- Indeksy dla tabeli `galeria_zdjec`
---
 ALTER TABLE `galeria_zdjec`
   ADD PRIMARY KEY (`id_zdjecia`);
 
---
--- Indeksy dla tabeli `kategorie`
---
-ALTER TABLE `kategorie``
+ALTER TABLE `kategorie`
   ADD PRIMARY KEY (`id_kategoria`);
 
---
--- Indeksy dla tabeli `producenci`
---
 ALTER TABLE `producenci`
   ADD PRIMARY KEY (`id_producenci`);
 
---
--- Indeksy dla tabeli `zamowienie`
---
 ALTER TABLE `zamowienie`
   ADD PRIMARY KEY (`id_sprzedazy`);
 
---
--- Indeksy dla tabeli `klienci`
---
 ALTER TABLE `Klienci`
   ADD PRIMARY KEY (`id_klienta`);
 
---
--- Indeksy dla tabeli `pracownicy`
---
 ALTER TABLE `pracownicy`
   ADD PRIMARY KEY (`id_pracownik`);
 
---
--- AUTO_INCREMENT dla zrzuconych tabel
---
 
---
--- AUTO_INCREMENT dla tabeli `producenci`
---
 ALTER TABLE `producenci`
   MODIFY `id_producenci` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT dla tabeli `galeria_zdjec`
---
 ALTER TABLE `produkty`
   MODIFY `id_produktu` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT dla tabeli `kategorie`
---
 ALTER TABLE `kategorie`
   MODIFY `id_kategoria` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT dla tabeli `galeria_zdjec`
---
+
 ALTER TABLE `galeria_zdjec`
   MODIFY `id_zdjecia` int(11) NOT NULL AUTO_INCREMENT;
 
 
---
--- AUTO_INCREMENT dla tabeli `zamowienie`
---
 ALTER TABLE `zamowienie`
   MODIFY `id_sprzedazy` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT dla tabeli `klienci`
---
+
 ALTER TABLE `klienci`
   MODIFY `id_klienta` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT dla tabeli `dane_logowania`
---
 ALTER TABLE `dane_logowania`
   MODIFY `id_konta` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT dla tabeli `pracownicy`
---
 ALTER TABLE `pracownicy`
   MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
