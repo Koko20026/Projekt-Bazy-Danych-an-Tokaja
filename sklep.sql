@@ -4,7 +4,7 @@ CREATE TABLE `Dane_Logowania` (
   `haslo` varchar(32) NOT NULL,
   `adres` varchar(64) DEFAULT NULL,
   `e-mail` varchar(45) NOT NULL,
-  `id_pracownik` int(11),
+  `id_pracownik` int(11) DEFAULT NULL,
   `login` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -13,8 +13,7 @@ CREATE TABLE `Pracownicy` (
   `id_pracownik` int(11) NOT NULL,
   `imie` varchar(45) NOT NULL,
   `nazwisko` varchar(45) NOT NULL, 
-  `telefon` varchar(45) NOT NULL,
-  `Adres` varchar(45) NOT NULL
+  `telefon` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `galeria_zdjec`;
@@ -41,13 +40,13 @@ CREATE TABLE `producenci` (
 
 DROP TABLE IF EXISTS `produkty`;
 CREATE TABLE `produkty` (
+  `id_produktu` varchar(45) NOT NULL,
   `id_producenci` int(11) NOT NULL,
   `nazwa_produktu` varchar(45) NOT NULL,
-  `id_produktu` varchar(45) NOT NULL,
   `opis` varchar(45) NOT NULL,
   `fotografia` varchar(45) NOT NULL,
-  `cena_netto` varchar(45) NOT NULL,
-  `cena_brutto` varchar(45) NOT NULL,
+  `cena_netto` decimal(7,2) NOT NULL,
+  `cena_brutto` decimal(7,2) NOT NULL,
   `kategoria` varchar(45) NOT NULL
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -132,3 +131,15 @@ ALTER TABLE `dane_logowania`
 
 ALTER TABLE `pracownicy`
   MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT;
+  
+INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`fotografia`,`cena_netto`,`cena_brutto`,`kategoria`) VALUES
+ (1,'Narty',1,'Narty do biegania','Narty','499.99','614.99','Narty');
+ 
+ INSERT INTO `producenci` (`id_producenci`,`nazwa`,`adres`) VALUES
+ (1,'Rossignol','Siedlce Polowa 12');
+ 
+ INSERT INTO `Dane_Logowania` (`id_konta`,`haslo`,`adres`,`e-mail`,`id_pracownik`,`login`) VALUES
+ (1,'BAWARA','','test@zsp.pl','','KANAREK'),
+ (2,'Pracownik','Siedlce Sokolowska 14','pracownik@zsp.pl',1,'pracownik');
+ 
+ 
