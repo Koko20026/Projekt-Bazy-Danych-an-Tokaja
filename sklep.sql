@@ -142,4 +142,24 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  (1,'BAWARA','','test@zsp.pl','','KANAREK'),
  (2,'Pracownik','Siedlce Sokolowska 14','pracownik@zsp.pl',1,'pracownik');
  
+  INSERT INTO `pracownicy` (`id_pracownik`,`imie`,`nazwisko`,`telefon`) VALUES
+ (1,'Tadeusz','Norek','800899769');
+  
+  INSERT INTO `galeria_zdjec` (`id_zdjecia`,`nazwa_jpg`,`id_produktu`,`fotografia`) VALUES
+ (1,'narty rossilman.jpg',1,'Narty');
+ 
+   INSERT INTO `kategoria` (`id_kategoria`,`kategoria`) VALUES
+ (1,'Narty');
+ 
+   INSERT INTO `zamowienie_produkty` (`id_produktu`,`id_sprzedazy`) VALUES
+ (1,1);
+ 
+ INSERT INTO `zamowienie` (`id_produktu`,`id_sprzedazy`,`data`,`id_klienta`,`ilosc`) VALUES
+ (1,1,'2021-11-23',1,'2');
+ 
+ INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`Adres`,`NIP`,`id_sprzedazy`,`login`) VALUES
+ ('Selena',3,'Gomez','Warszawa Podolska 12','1234567890',1,'');
+ 
+ 
+ 
  
