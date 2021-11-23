@@ -1,0 +1,18 @@
+html{
+        background-color: grey;
+}
+#kategorie{
+    width: 20%;    
+    height: auto;
+    position: fixed;
+}
+#zawartosc{
+    width:80%;
+    height:auto;
+    position: fixed;
+}
+#slider{
+    width:auto;
+    height:20%;
+    position: fixed;
+}
