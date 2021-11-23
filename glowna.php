@@ -12,61 +12,74 @@
 
 <body>
     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Strona Główna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">koszyk</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                kategorie
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">kategorie1</a></li>
+                                <li><a class="dropdown-item" href="#">kategopria2</a></li>
+                                <li><a class="dropdown-item" href="#">kategoria3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div id="slider">
-        <div class="row">
-            <div class="col-12">
-                <div id="slider">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="zdjecia\narciarz.png" class="d-block w-100" alt="pierwsze zdjecie">
+            <div class="row">
+                <div class="col">
+                    <div id="slider">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="zdjecia\narciarz.png" class="d-block w-100" alt="pierwsze zdjecie">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="" class="d-block w-100" alt="drugie zdjecie">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="" class="d-block w-100" alt="trzecie zdjecie">
+                                </div>
                             </div>
-                            <div class="carousel-item">
-                                <img src="zdjecia\narty.jpg" class="d-block w-100" alt="drugie zdjecie">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="zdjecia\lyzwy.jpg" class="d-block w-100" alt="trzecie zdjecie">
-                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
-</div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-3">
+    <div id="zawartosc">
+        <div class="col">
             <div id="kategorie">
                 <p>narty</p><br>
                 <p>łyżwy</p><br>
                 <p>kombinezony</p><br>
                 <p>kaski</p><br>
                 <p>gogle</p><br>
-                <p></p><br>
             </div>
         </div>
-        <div class="col-9">
-            <div id="zawartosc">
-                <p>jest dobrze</p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div id="stopka">
-                <P>stopka</p>
-            </div>
-        </div>
-    </div>
-    </div>
     </div>
 
 
