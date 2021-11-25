@@ -149,7 +149,13 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  (1,'narty rossilman.jpg',1,'Narty');
  
    INSERT INTO `kategoria` (`id_kategoria`,`kategoria`) VALUES
- (1,'Narty');
+ (1,'Narty'),
+ (2,'Buty'),
+ (3,'Kije'),
+ (4,'Kaski'),
+ (5,'Rękawice'),
+ (6,'Odziez'),
+ (7,'Akcesoria');
  
    INSERT INTO `zamowienie_produkty` (`id_produktu`,`id_sprzedazy`) VALUES
  (1,1);
