@@ -35,7 +35,9 @@ DROP TABLE IF EXISTS `producenci`;
 CREATE TABLE `producenci` (
   `id_producenci` int(11) NOT NULL,
   `nazwa` varchar(45) NOT NULL,
-  `adres` varchar(45) NOT NULL
+  `miasto` varchar(45) NOT NULL,
+  `ulica` varchar(45) NOT NULL,
+   `numer` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `produkty`;
@@ -136,8 +138,8 @@ ALTER TABLE `pracownicy`
 INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`fotografia`,`cena_netto`,`cena_brutto`,`kategoria`) VALUES
  (1,'Narty',1,'Narty do biegania','Narty','499.99','614.99','Narty');
  
- INSERT INTO `producenci` (`id_producenci`,`nazwa`,`adres`) VALUES
- (1,'Rossignol','Siedlce Polowa 12');
+ INSERT INTO `producenci` (`id_producenci`,`nazwa`,`miasto`,`ulica`,`numer`) VALUES
+ (1,'Rossignol','Siedlce','Sokolowska','12');
  
  INSERT INTO `Dane_Logowania` (`id_konta`,`haslo`,`e-mail`,`id_pracownik`,`login`) VALUES
  (1,'BAWARA','','test@zsp.pl','','KANAREK'),
@@ -164,8 +166,8 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  INSERT INTO `zamowienie` (`id_produktu`,`id_sprzedazy`,`miasto`,`ulica`,`numer`,`data`,`id_klienta`,`ilosc`) VALUES
  (1,1,'2021-11-23','Siedlce','Lelewela','18',1,'2');
  
- INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`Adres`,`NIP`,`id_sprzedazy`,`login`) VALUES
- ('Selena',3,'Gomez','Warszawa Podolska 12','1234567890',1,'');
+ INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`NIP`,`id_sprzedazy`,`login`) VALUES
+ ('Selena',3,'Gomez','1234567890',1,'');
  
  
  
