@@ -63,6 +63,9 @@ CREATE TABLE `zamowienie` (
   `id_sprzedazy` int(11) NOT NULL,
   `id_produktu` int(11) NOT NULL,
   `data` date NOT NULL,
+  `Miasto` varchar(45) NOT NULL,
+  `Ulica` varchar(45) NOT NULL,
+  `Numer` varchar(45) NOT NULL,
   `id_klienta` int(11) NOT NULL,
   `ilosc` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -72,7 +75,6 @@ CREATE TABLE `klienci` (
   `Imie` varchar(45) NOT NULL,
   `id_klienta` int(11) NOT NULL,
   `Nazwisko` varchar(45) NOT NULL,
-  `Adres` varchar(45) NOT NULL,
   `NIP` int(10) NOT NULL,
   `id_sprzedazy` varchar(45) NOT NULL,
   `login` varchar(45)
@@ -81,8 +83,7 @@ CREATE TABLE `klienci` (
 
 ALTER TABLE `Produkty`
   ADD PRIMARY KEY (`id_produktu`);
-
-
+  
 ALTER TABLE `dane_logowania`
   ADD PRIMARY KEY (`id_konta`);
 
@@ -138,9 +139,9 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  INSERT INTO `producenci` (`id_producenci`,`nazwa`,`adres`) VALUES
  (1,'Rossignol','Siedlce Polowa 12');
  
- INSERT INTO `Dane_Logowania` (`id_konta`,`haslo`,`adres`,`e-mail`,`id_pracownik`,`login`) VALUES
+ INSERT INTO `Dane_Logowania` (`id_konta`,`haslo`,`e-mail`,`id_pracownik`,`login`) VALUES
  (1,'BAWARA','','test@zsp.pl','','KANAREK'),
- (2,'Pracownik','Siedlce Sokolowska 14','pracownik@zsp.pl',1,'pracownik');
+ (2,'Pracownik','pracownik@zsp.pl',1,'pracownik');
  
   INSERT INTO `pracownicy` (`id_pracownik`,`imie`,`nazwisko`,`telefon`) VALUES
  (1,'Tadeusz','Norek','800899769');
