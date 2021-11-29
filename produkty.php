@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="glowna.php">Strona Główna</a>
+            <a class="nav-link active" aria-current="page" href="glowna.php"><img src="logo" alt="Logo" ></a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="produkty.php">Sklep</a>
