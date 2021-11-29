@@ -88,7 +88,7 @@
             cena
           </div>
           <div id="koszyk">
-            <button><img href="zdjecia/koszyk.png"> </button>
+            <button><img href="img/koszyk.png"> </button>
           </div>
         </div>
         <div class="produkt">
@@ -99,7 +99,7 @@
             cena
           </div>
           <div id="koszyk">
-            <button><img href="zdjecia/koszyk.png"> </button>
+            <button><img href="img/koszyk.png"> </button>
           </div>
         </div>
         <div class="produkt">
@@ -110,7 +110,7 @@
             cena
           </div>
           <div id="koszyk">
-            <button><img href="zdjecia/koszyk.png"> </button>
+            <button><img href="img/koszyk.png"> </button>
           </div>
         </div>
         <div class="produkt">
@@ -121,7 +121,7 @@
             cena
           </div>
           <div id="koszyk">
-            <button><img href="zdjecia/koszyk.png"> </button>
+            <button><img href="img/koszyk.png"> </button>
           </div>
         </div>
       </div>
