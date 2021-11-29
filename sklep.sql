@@ -157,5 +157,5 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  INSERT INTO `zamowienie` (`id_produktu`,`id_sprzedazy`,`miasto`,`ulica`,`numer`,`data`,`id_klienta`,`ilosc`) VALUES
  (1,1,'2021-11-23','Siedlce','Lelewela','18',1,'2');
  
- INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`NIP`,`id_sprzedazy`,`login`) VALUES
+ INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`NIP`,`id_sprzedazy`,`email`) VALUES
  ('Selena',3,'Gomez','1234567890',1,'');
