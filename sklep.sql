@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS `dane_logowania`;
 CREATE TABLE `Dane_Logowania` (
   `id_konta` int(11) NOT NULL,
   `haslo` varchar(32) NOT NULL,
-  `adres` varchar(64) DEFAULT NULL,
   `e-mail` varchar(45) NOT NULL,
   `id_pracownik` int(11) DEFAULT NULL,
   `login` varchar(45) NOT NULL
