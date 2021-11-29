@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS `dane_logowania`;
-CREATE TABLE `Dane_Logowania` (
-  `id_konta` int(11) NOT NULL,
+CREATE TABLE `dane_logowania` (
+  `id_konta` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `haslo` varchar(32) NOT NULL,
-  `e_mail` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
   `id_pracownik` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -84,9 +84,6 @@ CREATE TABLE `klienci` (
 ALTER TABLE `Produkty`
   ADD PRIMARY KEY (`id_produktu`);
   
-ALTER TABLE `dane_logowania`
-  ADD PRIMARY KEY (`id_konta`);
-
 ALTER TABLE `galeria_zdjec`
   ADD PRIMARY KEY (`id_zdjecia`);
 
@@ -127,8 +124,6 @@ ALTER TABLE `zamowienie`
 ALTER TABLE `klienci`
   MODIFY `id_klienta` int(11) NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `dane_logowania`
-  MODIFY `id_konta` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `pracownicy`
   MODIFY `id_pracownik` int(11) NOT NULL AUTO_INCREMENT;
@@ -138,11 +133,7 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  
  INSERT INTO `producenci` (`id_producenci`,`nazwa`,`miasto`,`ulica`,`numer`) VALUES
  (1,'Rossignol','Siedlce','Sokolowska','12');
- 
- INSERT INTO `Dane_Logowania` (`id_konta`,`haslo`,`e_mail`,`id_pracownik`) VALUES
- (1,'BAWARA','test@zsp.pl',''),
- (2,'Pracownik','pracownik@zsp.pl',1);
- 
+  
   INSERT INTO `pracownicy` (`id_pracownik`,`imie`,`nazwisko`,`telefon`) VALUES
  (1,'Tadeusz','Norek','800899769');
   
@@ -166,7 +157,3 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  
  INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`NIP`,`id_sprzedazy`,`login`) VALUES
  ('Selena',3,'Gomez','1234567890',1,'');
- 
- 
- 
- 
