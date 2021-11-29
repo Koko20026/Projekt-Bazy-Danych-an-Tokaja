@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS `dane_logowania`;
 CREATE TABLE `dane_logowania` (
-  `id_konta` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `haslo` varchar(32) NOT NULL,
   `email` varchar(45) NOT NULL,
   `id_pracownik` int(11) DEFAULT NULL
@@ -77,12 +76,15 @@ CREATE TABLE `klienci` (
   `Nazwisko` varchar(45) NOT NULL,
   `NIP` int(10) NOT NULL,
   `id_sprzedazy` varchar(45) NOT NULL,
-  `login` varchar(45)
+  `email` varchar(45)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 ALTER TABLE `Produkty`
   ADD PRIMARY KEY (`id_produktu`);
+  
+  ALTER TABLE `Dane_Logowania`
+  ADD PRIMARY KEY (`email`);
   
 ALTER TABLE `galeria_zdjec`
   ADD PRIMARY KEY (`id_zdjecia`);
