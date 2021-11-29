@@ -142,7 +142,7 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
   INSERT INTO `galeria_zdjec` (`id_zdjecia`,`nazwa_jpg`,`id_produktu`,`fotografia`) VALUES
  (1,'narty rossilman.jpg',1,'Narty');
  
-   INSERT INTO `kategoria` (`id_kategoria`,`kategoria`) VALUES
+   INSERT INTO `kategorie` (`id_kategoria`,`kategoria`) VALUES
  (1,'Narty'),
  (2,'Buty'),
  (3,'Kije'),
