@@ -18,9 +18,10 @@ if(isset($_POST['login']))
 {
     $login = $conn->query("SELECT * FROM dane_logowania WHERE email ='" . $_POST['email'] . "' LIMIT 1");
     $user = $login->fetch(PDO::FETCH_ASSOC);
+    
     if ($user) {
         if (password_verify($_POST['haselko'], $user['haslo'])){
- die("<h3>Uzytkownik zalogowany pomyslnie</h3>");
+header('Location: http://localhost/projekt/glowna.php');
  }else{
  echo "<h3>Nieprawidlowe haslo</h3>";
  }
@@ -29,11 +30,11 @@ if(isset($_POST['login']))
  }
 
 }
+   
 ?>
  <div id="zawartosc">
         <h1>Logowanie</h1>
         <div id="formularz">
-        <h1>Login</h1>
 <form method="post">
  <input type="text" name="email" placeholder="Email">
  <input type="password" name="haselko" placeholder="Password">
