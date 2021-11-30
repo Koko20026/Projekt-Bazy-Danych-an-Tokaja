@@ -11,8 +11,8 @@
 </head>
 
 <body>
-
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,22 +39,23 @@
                     </ul>
                 </div>
             </div>
-        </div>
+</div>
     </nav>
+
 
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12" >
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 500px;">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img\reklama1.jpg" class="d-block w-100" alt="...">
+                            <img src="img\reklama1.jpg" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="img\reklama2.jpg" class="d-block w-100" alt="...">
+                            <img src="img\reklama2.jpg"  alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="img\reklama3.jpg" class="d-block w-100" alt="...">
+                            <img src="img\reklama3.jpg" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -70,7 +71,18 @@
             <div class="zawartosc" class="col-xl-12 col-lg-12 col-md-12">
                 <div class="produkt">
                     <div id="zdjecie">
-                        zdjecie
+                        <img id="produkt" src="img/narty 1.jpg"  alt="Narty" >
+                    </div>
+                    <div id="cena">
+                        Cena
+                    </div>
+                    <div id="koszyk">
+                        <button><img href="zdjecia/koszyk.png"> </button>
+                    </div>
+                </div>
+                <div class="produkt">
+                    <div id="zdjecie">
+                    <img id="produkt" src="img/buty 1.jpg"  alt="Buty" >
                     </div>
                     <div id="cena">
                         cena
@@ -81,7 +93,7 @@
                 </div>
                 <div class="produkt">
                     <div id="zdjecie">
-                        zdjecie
+                    <img id="produkt" src="img/kije 1.jpg"  alt="Kije" >
                     </div>
                     <div id="cena">
                         cena
@@ -92,18 +104,7 @@
                 </div>
                 <div class="produkt">
                     <div id="zdjecie">
-                        zdjecie
-                    </div>
-                    <div id="cena">
-                        cena
-                    </div>
-                    <div id="koszyk">
-                        <button><img href="zdjecia/koszyk.png"> </button>
-                    </div>
-                </div>
-                <div class="produkt">
-                    <div id="zdjecie">
-                        zdjecie
+                    <img id="produkt" src="img/gogle 1.jpg"  alt="gogle" >
                     </div>
                     <div id="cena">
                         cena
@@ -124,15 +125,15 @@
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
-                <span class="text-muted">© 2021 Company, Inc</span>
+                <span class="text-muted">© 2021 Makosz Company, Inc</span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                 <li class="ms-3"><a class="text-muted" href="#">
-                        <p>regulamin<p>
+                        <p>Regulamin<p>
                     </a></li>
                 <li class="ms-3"><a class="text-muted" href="#">
-                        <p>polityka<prywatności< /p>
+                        <p>Polityka<prywatności< /p>
                     </a></li>
 
             </ul>
