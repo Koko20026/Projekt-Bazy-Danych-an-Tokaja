@@ -12,34 +12,29 @@
 </head>
 
 <body>
+    <?php
+    include "polacz.php";
+    if (isset($_POST['register'])) {
+        $email = $_POST['email'];
+        $haslo = $_POST['haslo'];
+        $hashPassword = password_hash($haslo, PASSWORD_BCRYPT);
+        $sth = $conn->prepare('INSERT INTO dane_logowania (haslo,email) VALUE(:haslo, :email)');
+        $sth->bindValue(':email', $email, PDO::PARAM_STR);
+        $sth->bindValue(':haslo', $hashPassword, PDO::PARAM_STR);
+        $sth->execute();
+    }
+    ?>
+
+
     <div id="zawartosc">
         <div id="formularz">
-            <form>
-                <div class="row mb-3">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">login</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputlogin">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                </div>
-
+            <h1>Rejestracja</h1>
+            <form method="post">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="haslo" placeholder="Password">
+                <button type="submit" name="register">Zarejestruj</button>
             </form>
         </div>
-        <div id="przycisk" class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary">zaloguj sie</button>
-        </div>
-    </div>
 </body>
 
 </html>
