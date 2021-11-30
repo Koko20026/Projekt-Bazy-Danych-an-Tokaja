@@ -22,6 +22,7 @@
         $sth->bindValue(':email', $email, PDO::PARAM_STR);
         $sth->bindValue(':haslo', $hashPassword, PDO::PARAM_STR);
         $sth->execute();
+        header('Location: http://localhost/projekt/logowanie.php');
     }
     ?>
 
