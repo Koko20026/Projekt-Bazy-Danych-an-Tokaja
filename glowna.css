@@ -1,30 +1,13 @@
-nav{
-background-color: #abf4eb;
-color: black;
-display: flex;
+
+#kategorie{
+    width: 20%;    
+    height: auto;
+    position: fixed;
 }
-.zawartosc{
-    border-style: solid;
-    display: flex;
-}
-#footer {
-    border-style: solid;
-    background-color: grey;
-    position: absolute;
-    height: 300px;
-    bottom: 0;
-}
-.produkt{
-    text-align: center;
-    width: 150px;
-    border-style:solid;
-    margin: 10px;
-}
-.log{
-    text-align: right;
-}
-.container1{
-    display: flex;
+#zawartosc{
+    width:80%;
+    height:auto;
+    position: fixed;
 }
 #slider{
     width: 300px;
@@ -53,3 +36,16 @@ h1
 {
 	background-color: #91a33b !important;
 }
+.navbar{
+    background-color: #19e5e6;
+    color: white;
+}
+#produkt{
+    height: 400px;
+    width: 300px;
+}
+
+
+
+
+
