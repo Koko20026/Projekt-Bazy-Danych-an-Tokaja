@@ -1,14 +1,12 @@
-    <?php
-    $username="root";
-    $host = "localhost";
-    $dbname = "sklep";
+<?php
+$host = 'localhost';
+$username = 'user';
+$password = 'user123';
+$dbName = 'sklep';
 
-    try{
-        $conn = new PDO("mysql:host=$host,dbname=$dbname, $username");
-    }catch(PDOException $e){
-        die("blad laczenia z baza danych!");
-        
-    };
-    ?>
-    </body>
-</html>
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+} catch (PDOException $e) {
+    die("Error connecting to database!");
+}
+?>
