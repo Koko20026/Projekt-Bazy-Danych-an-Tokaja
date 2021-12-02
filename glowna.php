@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12" >
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
-                    <div class="carousel-inner">
+                    <div id="slider" class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="img\reklama1.jpg" alt="...">
                         </div>
@@ -68,6 +68,16 @@
                     </button>
                 </div>
             </div>
+            <div class="kategorie" class="col-xl-12 col-lg-12 col-md-12">
+            <p>kategorie</p>
+        <ul class="list-group">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li>
+        </ul>
+</div>
             <div class="zawartosc" class="col-xl-12 col-lg-12 col-md-12">
                 <div class="produkt">
                     <div id="zdjecie">
