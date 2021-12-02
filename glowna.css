@@ -6,12 +6,13 @@
 }
 #zawartosc{
     width:80%;
-    height:auto;
-    position: fixed;
+    height:60%;
+    display: flex;
 }
+
 #slider{
-    width: 300px;
-    position: fixed;
+    width: 200px;
+    height: 75px;
 }
 body
 {
