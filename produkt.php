@@ -8,18 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="produkt.css" rel="stylesheet" >
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
-<script>
-        $(document).ready(function(){
-        $(".galImg").click(function(){
-        var obraz = $(this).attr("rel");
-        $('#glowny').fadeOut('slow',function(){
-        $("img.glowny").attr('src',obraz);
-        $('#glowny').fadeIn('slow');
-        });
-        });
-        });
-</script>
+
 
   <title>produkty</title>
 </head>
@@ -57,23 +46,52 @@
   
 
       <div id="zawartosc">
-         <div id="galeria">
-               <div id="glowny">
-               <img src="img\buty 1.jpg" border="0" class="glowny"/>
+        <div id="slider">
+         <div class="col-xl-12 col-lg-12 col-md-12" >
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="sliderzdjecie"  src="img\buty 1.jpg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="sliderzdjecie"  src="img\buty 1-2.jpg"  alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img  id="sliderzdjecie"  src="img\buty 1-3.jpg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="sliderzdjecie"  src="img\buty 1-4.jpg" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-
-               <div class="miniaturki">
-               <a href="#" rel="img\buty 1.jpg"     class="galImg"><img src="img\buty 1.jpg" class="maly" /></a>
-               <a href="#" rel="img\buty 1-2.jpg"     class="galImg"><img src="img\buty 1-2.jpg" class="maly" /></a>
-               <a href="#" rel="img\buty 1-3.jpg"    class="galImg"><img src="img\buty 1-3.jpg" class="maly" /></a>
-               <a href="#" rel="img\buty 1-4.jpg"    class="galImg"><img src="img\buty 1-4.jpg" class="maly" /></a>
-             </div>
-         </div>
+            </div>
+          </div>
          <div id="produkt">
-            <h1>Podgrzewane buty narciarskie </h1>
-                <h1> męskie Salomon QST ACCESS 90 Custom Heat 2022</h1>
-         </div>
+            <h1>Podgrzewane buty narciarskie męskie Salomon QST ACCESS 90 Custom Heat 2022</h1>
+            <p> Cena </p>
+            <p> Koszyk </p>
+                  <div id="opis produktu">
+        <div id="opis">
+      <h2> Opis Produktu </h2>
+  </div>
+      <div id="opisek">
+        <P><b>Styl Jazdy:</b> allround</P>
+        <p><b>Technologie:</b> CUSTOM HEAT - PODGRZEWANY BUT WEWNĘTRZNY; SYSTEM HIKE/RIDE</p>
+        <p><b>Flex:</b> 90</p>
+        <p><b>Szerokość skorupy dla rozmiaru 26.0/26.5 [mm] :</b> 100mm</p>
+</div>
+</div>
+         </div>         
       </div>
+
 
 
 
@@ -84,7 +102,7 @@
           <use xlink:href="#bootstrap"></use>
         </svg>
       </a>
-      <span class="text-muted">© 2021 Company, Inc</span>
+      <span class="text-muted">© 2021 Makosz Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
