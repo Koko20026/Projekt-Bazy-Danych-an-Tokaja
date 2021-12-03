@@ -43,19 +43,20 @@
     </nav>
 
 
-    <div class="container">
+     <div class="container">
         <div class="row">
+            <div id="slider">
             <div class="col-xl-12 col-lg-12 col-md-12" >
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
-                    <div id="slider" class="carousel-inner">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img\reklama1.jpg" alt="...">
+                            <img id="sliderzdjecie" src="img\reklama1.jpg" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="img\reklama2.jpg"  alt="...">
+                            <img id="sliderzdjecie" src="img\reklama2.jpg"  alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="img\reklama3.jpg" alt="...">
+                            <img id="sliderzdjecie" src="img\reklama3.jpeg" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -68,8 +69,10 @@
                     </button>
                 </div>
             </div>
-            <div class="kategorie" class="col-xl-12 col-lg-12 col-md-12">
-            <p>kategorie</p>
+             </div>
+             <div class="row">
+                         <div class="kategorie" class="col-xl-12 col-lg-12 col-md-12">
+            <p>Kategorie</p>
         <ul class="list-group">
           <li class="list-group-item">An item</li>
           <li class="list-group-item">A second item</li>
@@ -78,8 +81,10 @@
           <li class="list-group-item">And a fifth one</li>
         </ul>
 </div>
+             
+                 <h1> Proponowane Produkty </h1>
             <div class="zawartosc" class="col-xl-12 col-lg-12 col-md-12">
-                <div class="produkt">
+                <div class="produkt-kup">
                     <div id="zdjecie">
                         <img id="produkt" src="img/narty 1.jpg"  alt="Narty" >
                     </div>
@@ -90,7 +95,7 @@
                         <button><img href="zdjecia/koszyk.png"> </button>
                     </div>
                 </div>
-                <div class="produkt">
+                <div class="produkt-kup">
                     <div id="zdjecie">
                     <img id="produkt" src="img/buty 1.jpg"  alt="Buty" >
                     </div>
@@ -101,7 +106,7 @@
                         <button><img href="zdjecia/koszyk.png"> </button>
                     </div>
                 </div>
-                <div class="produkt">
+                <div class="produkt-kup">
                     <div id="zdjecie">
                     <img id="produkt" src="img/kije 1.jpg"  alt="Kije" >
                     </div>
@@ -112,7 +117,7 @@
                         <button><img href="zdjecia/koszyk.png"> </button>
                     </div>
                 </div>
-                <div class="produkt">
+                <div class="produkt-kup">
                     <div id="zdjecie">
                     <img id="produkt" src="img/gogle 1.jpg"  alt="gogle" >
                     </div>
@@ -124,6 +129,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
     </div>
