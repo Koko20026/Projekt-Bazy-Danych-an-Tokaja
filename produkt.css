@@ -14,40 +14,22 @@ header{
    background-color: #19e5e6;
    color: white;
 }
-#galeria
+#slider
 {
-width: 800px;
-margin-left: auto;
-margin-right: auto;
-
-}
-#glowny
-{
-height: 800px;
-height: 600px;
-margin: 10px;
-}
-.maly
-{
-   
-margin-left: auto;
-width: 266px;
-float: left;
-height: 200px; 
-
-}
-.glowny
-{
-height: 600px;
-margin: 1px;
-width: 800px;
+    margin: 50px;
+width: 700px;
+height: 1000px;
 }
 #zawartosc{
-    width:80%;
-    height:60%;
-    display: flex;
+   display: flex;
 }
 #produkt{
-   text-align: right;
-   margin-left: auto;
+   text-align: center;
+   margin: 20px;
+}
+#sliderzdjecie
+{
+
+    width: 100%;
+    height: 100%; 
 }
