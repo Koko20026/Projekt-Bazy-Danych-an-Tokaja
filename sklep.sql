@@ -46,8 +46,8 @@ CREATE TABLE `produkty` (
   `fotografia` varchar(45) NOT NULL,
   `cena_netto` decimal(7,2) NOT NULL,
   `cena_brutto` decimal(7,2) NOT NULL,
-  `kategoria` varchar(45) NOT NULL
-  
+  `kategoria` varchar(45) NOT NULL,
+  `galeria` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `zamowienie_produkty`;
