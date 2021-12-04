@@ -18,7 +18,9 @@ CREATE TABLE `galeria_zdjec` (
   `id_zdjecia` int(11) NOT NULL,
   `nazwa_jpg` varchar(45) NOT NULL,
   `id_produktu` int(11) NOT NULL,
-  `fotografia` varchar(45) NOT NULL
+  `fotografia` varchar(45) NOT NULL,
+  `galeria` varchar(45) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
