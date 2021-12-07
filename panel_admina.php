@@ -22,11 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="kolumna col-xl-4 col-lg-12 col-md-12">
-            <?php
-                foreach($kategorie->fetchAll() as $row){
-                    echo '<tr><td>'.$row["kategoria"].'</td></tr>';
-                }
-                ?>
+            <p>tutaj bedzie cos</p>
             </div>
             <div class="formularz col-xl-8 col-lg-12 col-md-12">
                 <table>
