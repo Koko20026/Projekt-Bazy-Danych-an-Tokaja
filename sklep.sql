@@ -161,3 +161,23 @@ INSERT INTO `produkty` (`id_producenci`,`nazwa_produktu`,`id_produktu`,`opis`,`f
  
  INSERT INTO `klienci` (`Imie`,`id_klienta`,`Nazwisko`,`NIP`,`id_sprzedazy`,`email`) VALUES
  ('Selena',3,'Gomez','1234567890',1,'');
+ 
+ 
+ALTER TABLE produkty ADD FOREIGN KEY (id_producenci) REFERENCES producenci(id_producenci);
+
+ALTER TABLE produkty ADD FOREIGN KEY (fotografia) REFERENCES galeria_zdjec(fotografia);
+
+ALTER TABLE zamowienie_produkty ADD FOREIGN KEY (id_produktu) REFERENCES produkty(id_produktu);
+
+ALTER TABLE produkty ADD FOREIGN KEY (kategoria) REFERENCES kategorie(kategoria);
+
+ALTER TABLE zamowienie_produkty ADD FOREIGN KEY (id_sprzedazy) REFERENCES zamowienie(id_sprzedazy);
+
+ALTER TABLE produkty ADD FOREIGN KEY (kategoria) REFERENCES kategorie(kategoria);
+
+ALTER TABLE zamowienie ADD FOREIGN KEY (id_klienta) REFERENCES klienci(id_klienta);
+
+ALTER TABLE klienci ADD FOREIGN KEY (email) REFERENCES dane_logowania(email);
+
+ALTER TABLE dane_logowania ADD FOREIGN KEY (id_pracownik) REFERENCES pracownicy(id_pracownik);
+
