@@ -14,7 +14,14 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light">
+<?php
+    @include "polacz.php";
+    $kategorie = $conn->query("SELECT * FROM kategorie");
+    $losowane = $conn->query("SELECT * FROM produkty ORDER BY RAND() limit 4");
+
+    ?>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,20 +41,37 @@
 
                 </ul>
                 <div class="log">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="logowanie.php">Logowanie</a>
-                        </li>
-                    </ul>
+                    <?php
+                    if (empty($_SESSION['user']) | !isset($_SESSION['user'])) {
+                        echo '<a class="nav-link active" aria-current="page" href="logowanie.php">Zaloguj</a>';
+                    } else {
+                        echo '<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">siema fajnie że jesteś</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <li><a class="dropdown-item" href="#">twoje Zamowienia</a></li>
+      <li><a class="dropdown-item" href="#">panel admina jak bedzie konto admina</a></li>
+      <li><a class="dropdown-item" href="wyloguj.php">Wyloguj</a></li>
+    </ul>
+  </li>';
+                    }
+
+                    ?>
                 </div>
             </div>
-      </div>
-</nav>
-  
+</div>
+    </nav>
+   <div class="kategorie" class="col-xl-3 col-lg-12 col-md-12">
+    <?php
+                    echo "<ul class='kat'>Kategorie";
+                    foreach ($kategorie as $row) {
+                        echo "<li>$row[kategoria]</li>";
+                    }
+                    echo "</ul>";
+                    ?>    
+</div>
 
-      <div id="zawartosc">
+<div id="zawartosc">
         <div id="slider">
-         <div class="col-xl-12 col-lg-12 col-md-12" >
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -71,26 +95,28 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
+                    </div>           
                 </div>
-            </div>
-          </div>
+       
          <div id="produkt">
             <h1>Podgrzewane buty narciarskie męskie Salomon QST ACCESS 90 Custom Heat 2022</h1>
             <p> Cena </p>
             <p> Koszyk </p>
                   <div id="opis produktu">
         <div id="opis">
-      <h2> Opis Produktu </h2>
-  </div>
-      <div id="opisek">
-        <P><b>Styl Jazdy:</b> allround</P>
-        <p><b>Technologie:</b> CUSTOM HEAT - PODGRZEWANY BUT WEWNĘTRZNY; SYSTEM HIKE/RIDE</p>
-        <p><b>Flex:</b> 90</p>
-        <p><b>Szerokość skorupy dla rozmiaru 26.0/26.5 [mm] :</b> 100mm</p>
-</div>
-</div>
-         </div>         
-      </div>
+            <h2> Opis Produktu </h2>
+         </div>
+        <div id="opisek">
+            <P><b>Styl Jazdy:</b> allround</P>
+            <p><b>Technologie:</b> CUSTOM HEAT - PODGRZEWANY BUT WEWNĘTRZNY; SYSTEM HIKE/RIDE</p>
+            <p><b>Flex:</b> 90</p>
+            <p><b>Szerokość skorupy dla rozmiaru 26.0/26.5 [mm] :</b> 100mm</p>
+        </div>
+    </div>
+         </div>    
+                </div> 
+
+
 
 
 
