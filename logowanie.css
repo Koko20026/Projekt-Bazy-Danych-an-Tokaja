@@ -1,0 +1,25 @@
+#zawartosc {
+    width: 400px ;
+    height: 300px;
+    border-style: solid;
+    margin: auto;
+    text-align: center;
+};
+form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body
+{
+	background-color: #2F3336;
+	color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    margin: 0 auto;
+    padding: 0;
+        display: block;
+    width: auto;
+        overflow: auto;
+}
