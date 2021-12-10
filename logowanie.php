@@ -41,7 +41,7 @@ header('Location: http://localhost/projekt/glowna.php');
  <button type="submit" name="login">Zaloguj</button>
 </form>
             <div id="rejestrowanie">
-                <p>Jeżeli nie posziadasz konta <a href="rejestracja.php">zarejestruj sie </a></p>
+                <p>Jeżeli nie posiadasz konta <a href="rejestracja.php">zarejestruj sie </a></p>
             </div>
         </div> 
 </body>
