@@ -11,6 +11,13 @@
 </head>
 
 <body>
+    <body>
+    <?php
+    @include "polacz.php";
+    $kategorie = $conn->query("SELECT * FROM kategorie");
+    $losowane = $conn->query("SELECT * FROM produkty ORDER BY RAND() limit 4");
+
+    ?>
     
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -31,22 +38,40 @@
                     </li>
 
                 </ul>
-                <div class="log">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="logowanie.php">Logowanie</a>
-                        </li>
-                    </ul>
+                <?php
+                    if (empty($_SESSION['user']) | !isset($_SESSION['user'])) {
+                        echo '<a class="nav-link active" aria-current="page" href="logowanie.php">zaloguj</a>';
+                    } else {
+                        echo '<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">siema fajnie że jesteś</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <li><a class="dropdown-item" href="#">twoje zamowienia</a></li>
+      <li><a class="dropdown-item" href="#">panel admina jak bedzie konto admina</a></li>
+      <li><a class="dropdown-item" href="wyloguj.php">wyloguj</a></li>
+    </ul>
+  </li>';
+                    }
+
+                    ?>
+                </ul>
                 </div>
             </div>
 </div>
     </nav>
-
+                         <div class="kategorie" class="col-xl-3 col-lg-12 col-md-12">
+          <?php
+                    echo "<ul class='kat'>kategorie";
+                    foreach ($kategorie as $row) {
+                        echo "<li>$row[kategoria]</li>";
+                    }
+                    echo "</ul>";
+                    ?>     
+</div>
 
      <div class="container">
         <div class="row">
-            <div id="slider">
-            <div class="col-xl-12 col-lg-12 col-md-12" >
+            <div class="col-xl-9 col-lg-12 col-md-12" >
+                <div id="slider">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -70,20 +95,10 @@
                 </div>
             </div>
              </div>
-             <div class="row">
-                         <div class="kategorie" class="col-xl-12 col-lg-12 col-md-12">
-            <p>Kategorie</p>
-        <ul class="list-group">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
-        </ul>
-</div>
+             
              
                  <h1> Proponowane Produkty </h1>
-            <div class="zawartosc" class="col-xl-12 col-lg-12 col-md-12">
+            <div class="zawartosc" class="col-xl-9 col-lg-12 col-md-12">
                 <div class="produkt-kup">
                     <div id="zdjecie">
                         <img id="produkt" src="img/narty 1.jpg"  alt="Narty" >
@@ -155,6 +170,7 @@
             </ul>
         </footer>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
