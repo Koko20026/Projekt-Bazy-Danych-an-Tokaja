@@ -25,38 +25,44 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="glowna.php"><img src="img\logo.png" alt="Logo" ></a>
+                        <a class="nav-link active" aria-current="page" href="glowna.php">Strona Główna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="produkty.php">Strona produktu</a>
+                        <a class="nav-link active" aria-current="page" href="produkty.php">Strona produktów</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="koszyk.php">Koszyk</a>
                     </li>
 
-                </ul>
-                <?php
+                    <?php
                     if (empty($_SESSION['user']) | !isset($_SESSION['user'])) {
                         echo '<a class="nav-link active" aria-current="page" href="logowanie.php">zaloguj</a>';
+                        
                     } else {
+                        $rola = $conn->prepare('SELECT typ from dane_logowania where email = ?');
+                        $rola ->execute([$_SESSION['user']]);
+                        $typ = $rola->fetch()[0];
+                        
                         echo '<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">siema fajnie że jesteś</a>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">fajnie że jestes </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <li><a class="dropdown-item" href="#">twoje zamowienia</a></li>
-      <li><a class="dropdown-item" href="#">panel admina jak bedzie konto admina</a></li>
-      <li><a class="dropdown-item" href="wyloguj.php">wyloguj</a></li>
-    </ul>
-  </li>';
-                    }
+      <li><a class="dropdown-item" href="">twoje zamowienia</a></li>';
+      if($typ){
+        if($typ == 'admin'){
+        echo '<li><a class="dropdown-item" href="panel_admina.php">panel administratora</a></li>';
+        }}
+        echo '<li><a class="dropdown-item" href="wyloguj.php">wyloguj</a></li></ul></li>';
+        }
 
                     ?>
                 </ul>
-                </div>
+
+
             </div>
-</div>
+        </div>
     </nav>
                          <div class="kategorie" class="col-xl-3 col-lg-12 col-md-12">
           <?php
