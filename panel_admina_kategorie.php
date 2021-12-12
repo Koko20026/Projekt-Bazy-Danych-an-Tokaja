@@ -134,6 +134,7 @@
                     </div>
                 </div>
             </div>
+            <a class="btn btn-primary" href="panel_admina.php" role="button">Link</a>
         </div>
     </div>
 
