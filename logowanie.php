@@ -12,7 +12,8 @@
 </head>
 
 <body>
-<?php
+<?php 
+session_start();
 include "polacz.php";
 if(isset($_POST['login']))
 {
@@ -21,6 +22,7 @@ if(isset($_POST['login']))
     
     if ($user) {
         if (password_verify($_POST['haselko'], $user['haslo'])){
+            $_SESSION['user'] = htmlspecialchars($_POST['email']);
 header('Location: http://localhost/projekt/glowna.php');
  }else{
  echo "<h3>Nieprawidlowe haslo</h3>";
@@ -28,7 +30,7 @@ header('Location: http://localhost/projekt/glowna.php');
  }else{
  echo "<h3>Nie znaleziono uzytkownika</h3>";
  }
-
+echo $user['haslo'];
 }
    
 ?>
@@ -41,7 +43,7 @@ header('Location: http://localhost/projekt/glowna.php');
  <button type="submit" name="login">Zaloguj</button>
 </form>
             <div id="rejestrowanie">
-                <p>Jeżeli nie posiadasz konta <a href="rejestracja.php">zarejestruj sie </a></p>
+                <p>Jeżeli nie posziadasz konta <a href="rejestracja.php">zarejestruj sie </a></p>
             </div>
         </div> 
 </body>
