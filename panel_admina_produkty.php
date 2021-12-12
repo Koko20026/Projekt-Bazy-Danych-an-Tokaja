@@ -102,7 +102,7 @@
                     echo '<td>' . $row["fotografia"] . '</td>';
                     echo '<td>' . $row["cena_netto"] . '</td>';
                     echo '<td>' . $row["cena_brutto"] . '</td>';
-                    echo '<td>' . $row["kategorie"] . '</td>';
+                    echo '<td>' . $row["kategoria"] . '</td>';
                     echo '<td><form action="panel_admina_produkty.php" method="post"><td>
                     <input type="hidden" name="id_producenci" value="' . $row['id_producenci'] . '">
                     <input type="hidden" name="nazwa_produktu" value="' . $row['nazwa_produktu'] . '">
@@ -110,7 +110,7 @@
                     <input type="hidden" name="fotografia" value="' . $row['fotografia'] . '">
                     <input type="hidden" name="cena_netto" value="' . $row['cena_netto'] . '">
                     <input type="hidden" name="cena_brutto" value="' . $row['cena_brutto'] . '">
-                    <input type="hidden" name="kat" value="' . $row['kategorie'] . '">
+                    <input type="hidden" name="kat" value="' . $row['kategoria'] . '">
                     <input class="btn btn-primary" value="edytuj" type="submit"></td><td>
                     <input type="hidden" name="tryb" value="edycja_produkt">
                     <input type="hidden" name="id_produktu" value="' . $row['id_produktu'] . '"></form>
@@ -229,6 +229,7 @@
                     </div>
                 </div>
             </div>
+            <a class="btn btn-primary" href="panel_admina.php" role="button">wróć</a>
         </div>
     </div>
 
