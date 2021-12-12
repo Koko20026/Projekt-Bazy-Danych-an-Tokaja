@@ -14,11 +14,13 @@
     <div class="container">
         <div class="row">
             <div class="kolumna col-xl-12 col-lg-12 col-md-12">
-                
+
                 <a class="btn btn-primary" href="panel_admina_produkty.php" role="button">zarządzaj produktami</a>
                 <a class="btn btn-primary" href="panel_admina_producent.php" role="button">zarządaj producentami</a>
                 <a class="btn btn-primary" href="panel_admina_kategorie.php" role="button">zarządaj kategoriami</a>
                 <a class="btn btn-primary" href="panel_admina_pracownicy.php" role="button">zarządaj pracownikami</a>
+                <a class="btn btn-primary" href="glowna.php" role="button">wróć</a>
+
 
             </div>
 
