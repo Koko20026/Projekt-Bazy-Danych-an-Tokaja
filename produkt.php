@@ -29,7 +29,7 @@
         $user = $kwerenda2->fetch()[0];
         $dodaj = $conn->prepare("INSERT INTO produkty_koszyk (id_produktu, id_uzytkownika) VALUES (?,?)");
         $dodaj->execute([$id, $user]);
-        header("koszyk.php");
+        header("Location: koszyk.php");
     }
     ?>
     <nav class="navbar navbar-expand-lg navbar-light">
