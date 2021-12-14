@@ -21,6 +21,16 @@
         $kwerenda->execute([$_GET['id']]);
         $produkt = $kwerenda->fetch(PDO::FETCH_ASSOC);
     }
+
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+        $kwerenda2 = $conn->prepare("SELECT id_konta from dane_logowania where email = ? limit 1");
+        $kwerenda2->execute([$_SESSION['user']]);
+        $user = $kwerenda2->fetch()[0];
+        $dodaj = $conn->prepare("INSERT INTO produkty_koszyk (id_produktu, id_uzytkownika) VALUES (?,?)");
+        $dodaj->execute([$id, $user]);
+        header("koszyk.php");
+    }
     ?>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -67,49 +77,24 @@
     </nav>
 
     <div id="zawartosc">
-        <div id="slider">
-            <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="card shadow">
-                    <img src="<?php echo $produkt['fotografia'] ?>" width="100%" height="100%" alt="<?php echo $produkt['nazwa_produktu'] ?>"> </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h3 class="h3 text-uppercase" style="text-align: left;"><?php echo $produkt['nazwa_produktu'] ?></h3>
-                <hr>
-                <h6 style="text-align: left;"><?php echo $produkt['kategoria'] ?></h5>
-                    <h5><strong><?php echo $produkt['cena_brutto'] ?> zł</strong></h5>
+        <?php
+        echo '<div id="slider">';
+        echo '<div class="row">';
+        echo '<div class="col-xl-12 col-lg-12 col-md-12">';
+        echo '<img src="' . $produkt['fotografia'] . '" width="100%" height="100%" alt="' . $produkt['nazwa_produktu'] . '"> </a>';
+        echo '<h3 class="h3 text-uppercase" style="text-align: left;">' . $produkt['nazwa_produktu'] . '</h3>';
+        echo '<hr>';
+        echo '<h5 style="text-align: left;">' . $produkt['kategoria'] . '</h>';
+        echo '<h5><strong>' . $produkt['cena_brutto'] . 'zł</strong></h5>';
+        echo ' <p style="font-size:110%; text-align: justify;">' . $produkt['opis'] . '</p>';
+        echo '<form method="post" action="produkt.php">';
+        echo '<input type="hidden" name="id" value="' . $produkt['id_produktu'] . '">';
+        echo '<input type="submit" value="dodaj do koszyka">';
+        echo '</form>';
+        ?>
 
-                    <p style="font-size:110%; text-align: justify;"><?php echo $produkt['opis'] ?></p>
-
-                    <label class="name">Liczba sztuk:</label><br>
-                    <?php
-                    if (isset($_SESSION['user'])) {
-                        echo '<input class="align-items-center" id="session" type="hidden" value="1">';
-                    } else
-                        echo '<input class="align-items-center" id="session" type="hidden" value="0">';
-                    ?>
-                    <input class="align-items-center" id="ilosc" type="number" value="1" min="1" max="<?php echo $produkt['ilosc'] ?>">
-                    <button class="btn btn-bg btn-dark align-items-center" onclick="koszyk(<?php echo $produkt['id_produktu'] ?>)">Dodaj do koszyka</button>
-            </div>
-        </div>
     </div>
-    <!-- <div id="produkt">
-            <h1>Podgrzewane buty narciarskie męskie Salomon QST ACCESS 90 Custom Heat 2022</h1>
-            <p> Cena </p>
-            <p> Koszyk </p>
-                  <div id="opis produktu">
-        <div id="opis">
-      <h2> Opis Produktu </h2>
-  </div>
-      <div id="opisek">
-        <P><b>Styl Jazdy:</b> allround</P>
-        <p><b>Technologie:</b> CUSTOM HEAT - PODGRZEWANY BUT WEWNĘTRZNY; SYSTEM HIKE/RIDE</p>
-        <p><b>Flex:</b> 90</p>
-        <p><b>Szerokość skorupy dla rozmiaru 26.0/26.5 [mm] :</b> 100mm</p>
-</div> -->
-    </div>
-    </div>
-    </div>
+    
     <footer class="justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
@@ -128,6 +113,8 @@
                 </a></li>
         </ul>
     </footer>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
